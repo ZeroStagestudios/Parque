@@ -4,6 +4,7 @@ public class PlayerMovemment : MonoBehaviour
 {
    public float speed = 5f;
    public float rotationSpeed = 10f;
+   
    private CharacterController controller;
 
    void Start()
@@ -11,6 +12,19 @@ public class PlayerMovemment : MonoBehaviour
         controller = GetComponent<CharacterController>();
     }
     void Update()
+    
+    {
+        if(ConfirmacaoUI.Instance?.uiPanel != null && ConfirmacaoUI.Instance.uiPanel.activeSelf == true)
+
+        {
+            return; 
+        }
+        else
+        {
+            MovePlayer();
+        }
+    }
+    public void MovePlayer()
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
