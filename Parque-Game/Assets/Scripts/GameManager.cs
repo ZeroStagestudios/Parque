@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     public GameObject player;
     public Transform posicaoInicial;
     public Vector3 posicaoantesminigame;
+    private int minigamesJogadosHoje = 0;
+    private int maxMinigamesPorDia = 4;
     private CharacterController characterController;
 
     void Awake()
@@ -59,7 +61,8 @@ public class GameManager : MonoBehaviour
         {
             //Fim do jogo
             return;
-        }       
+        }  
+        minigamesJogadosHoje = 0;     
     }
 
     public void Posicaominigame()
@@ -67,5 +70,14 @@ public class GameManager : MonoBehaviour
         characterController.enabled = false; 
         player.transform.position = posicaoantesminigame; 
         characterController.enabled = true; 
+    }
+
+    public bool CanPlayMinigame()
+    {
+        return minigamesJogadosHoje < maxMinigamesPorDia;
+    }
+    public void RegisterMinigamePlayed()
+    {
+        minigamesJogadosHoje++;
     }
 }

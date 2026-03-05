@@ -7,6 +7,8 @@ public class IndicatorAnimator : MonoBehaviour
     public float amplitude = 0.5f;
     public Vector3 indicador;
 
+    public static object Instance { get; internal set; }
+
     void Awake()
     {
       indicador = transform.localPosition;

@@ -6,23 +6,25 @@ public class BoothTrigger : MonoBehaviour
     private BoothInteractable booth;
     public string snceneName;
     public bool mudarCena = false;
+    private IndicatorShake indicatorShake;
     void Awake()
     {
         booth = GetComponentInParent<BoothInteractable>();
+        indicatorShake = booth.indicador.GetComponent<IndicatorShake>();
     }
     void Update()
     {   
         if(mudarCena)
         {
             if (Input.GetKeyDown(KeyCode.E))
-            {
-                if (booth.HasPlayedToday())
+            {   if(!GameManager.Instance.CanPlayMinigame() || booth.HasPlayedToday())
                 {
-                    Debug.Log("Você já jogou este minigame hoje!");
+                    //Colocar Som !!!!
+                    indicatorShake.Shake();
                     return;
                 }
-
                 booth.RegisterPlay();
+                GameManager.Instance.RegisterMinigamePlayed();
                 GameManager.Instance.posicaoantesminigame = GameManager.Instance.player.transform.position;
                 SceneManager.LoadScene(snceneName);
 
