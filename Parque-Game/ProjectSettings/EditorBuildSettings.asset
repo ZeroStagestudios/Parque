@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/teste.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
-    path: Assets/Scenes/tiro ao alvo.unity
+    path: Assets/Scenes/PatoJogo.unity
     guid: 4a2c5e4beda717745964af93d7ead8b9
   - enabled: 1
     path: Assets/Scenes/pesca.unity
