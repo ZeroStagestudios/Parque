@@ -49,6 +49,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Duck
   duckManager: {fileID: 0}
   animator: {fileID: 2236751376465271162}
+  duracaoAnimacao: 1.33
+  tempoVisivel: 3
+  somQuack: {fileID: 8300000, guid: 5d82baffb244dc2449c5c366367c55bf, type: 3}
 --- !u!65 &3311731328737197094
 BoxCollider:
   m_ObjectHideFlags: 0

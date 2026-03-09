@@ -7,6 +7,8 @@ public class Duck : MonoBehaviour
     public Animator animator;
     public float duracaoAnimacao = 1.33f;
     public float tempoVisivel = 3f;
+
+    public AudioClip somQuack;
     
     bool foiAcertado = false;
     Coroutine coroutineAtiva;
@@ -42,6 +44,7 @@ public class Duck : MonoBehaviour
         foiAcertado = true;
         if (coroutineAtiva != null) StopCoroutine(coroutineAtiva);
         animator.SetTrigger("Hit");
+        AudioManager.instance.PlaySFX(somQuack);
         StartCoroutine(DesativarAposAnimacao());
         return true;
     }

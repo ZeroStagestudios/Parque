@@ -11,6 +11,8 @@ public class Gun : MonoBehaviour
     public float alturaParabola = 2f;
     public float duracaoTiro = 0.3f;
 
+    public AudioClip somTiro;
+
     MinigameManager minigameManager;
     LayerMask duckLayer;
 
@@ -23,8 +25,10 @@ public class Gun : MonoBehaviour
     {
         AtualizarPosicaoArma();
 
-        if (Input.GetMouseButtonDown(0) && municao > 0)
+        if (Input.GetMouseButtonDown(0) && municao > 0){
             Atirar();
+            AudioManager.instance.PlaySFX(somTiro);
+        }
     }
     void AtualizarPosicaoArma()
     {
