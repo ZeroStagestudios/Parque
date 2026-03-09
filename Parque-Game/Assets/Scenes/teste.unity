@@ -310,7 +310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d45912871981d2b408d9dd3a42345ffa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoothTrigger
-  snceneName: tiro ao alvo
+  snceneName: pesca
   mudarCena: 0
 --- !u!65 &186871491
 BoxCollider:
@@ -4027,7 +4027,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d45912871981d2b408d9dd3a42345ffa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoothTrigger
-  snceneName: tiro ao alvo
+  snceneName: PatoJogo
   mudarCena: 0
 --- !u!65 &1708111299
 BoxCollider:

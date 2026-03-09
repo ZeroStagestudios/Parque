@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3602627323489114603}
   - component: {fileID: 3656799678748990068}
   - component: {fileID: 3311731328737197094}
+  - component: {fileID: 2236751376465271162}
   m_Layer: 3
   m_Name: Pato
   m_TagString: Duck
@@ -47,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Duck
   duckManager: {fileID: 0}
+  animator: {fileID: 2236751376465271162}
 --- !u!65 &3311731328737197094
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -68,6 +70,28 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.52619386, y: 0.42842436, z: 0.37585783}
   m_Center: {x: 0.0037603378, y: 0.0150415, z: -0.0037604347}
+--- !u!95 &2236751376465271162
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824984271519708312}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8cd98539142fa2247b4fd920eb52a7f8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1024341394785703928
 GameObject:
   m_ObjectHideFlags: 0
@@ -79,11 +103,9 @@ GameObject:
   - component: {fileID: 940013968788023794}
   - component: {fileID: 5948124749252945807}
   - component: {fileID: 4033515226192109518}
-  - component: {fileID: 3293554489083266316}
-  - component: {fileID: 1501162290363877113}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: SpawnPoints1
-  m_TagString: Duck
+  m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -160,27 +182,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1024341394785703928}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &3293554489083266316
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 2350374719205947882, guid: d51ab11b371a7e843b5cd4920fb595e9, type: 3}
-  m_PrefabInstance: {fileID: 7591334999789643046}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1024341394785703928}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0.00000047683716, y: 0, z: -0.0000009536743}
 --- !u!1001 &7591334999789643046
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -198,8 +199,16 @@ PrefabInstance:
       value: SpawnPoints1
       objectReference: {fileID: 0}
     - target: {fileID: 3152208696629740705, guid: d51ab11b371a7e843b5cd4920fb595e9, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3152208696629740705, guid: d51ab11b371a7e843b5cd4920fb595e9, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3152208696629740705, guid: d51ab11b371a7e843b5cd4920fb595e9, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 9113729024079280087, guid: d51ab11b371a7e843b5cd4920fb595e9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -245,25 +254,5 @@ PrefabInstance:
     - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3152208696629740705, guid: d51ab11b371a7e843b5cd4920fb595e9, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1501162290363877113}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d51ab11b371a7e843b5cd4920fb595e9, type: 3}
---- !u!111 &1501162290363877113
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1024341394785703928}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Animation: {fileID: 7400000, guid: 9f52c391e647d3444b6a5864f6377e90, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 9f52c391e647d3444b6a5864f6377e90, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_UpdateMode: 0
-  m_CullingType: 0

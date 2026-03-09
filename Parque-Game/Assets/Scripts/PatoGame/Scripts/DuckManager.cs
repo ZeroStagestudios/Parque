@@ -6,16 +6,12 @@ public class DuckManager : MonoBehaviour
      List<Duck> ducks = new List<Duck>();
     public int patosSimultaneos = 3;
 
-    [System.Obsolete]
     void Awake()
     {
         ducks.AddRange(FindObjectsOfType<Duck>(true));
         foreach (Duck duck in ducks)
-        {
-            duck.duckManager = this;
-        }
+        duck.duckManager = this;
     }
-
     void Start()
     {
         IniciarRodada();
@@ -37,8 +33,6 @@ public class DuckManager : MonoBehaviour
         {
             int index = Random.Range(0, patosInativos.Count);
             patosInativos[index].AtivarDuck();
-            Debug.Log("Novo pato: " + patosInativos[index].gameObject.name);
-
         }        
         
     }
