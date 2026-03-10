@@ -14,6 +14,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/pesca.unity
     guid: 44728d4094362dd4b83eeb864d4a8740
+  - enabled: 1
+    path: Assets/Scenes/ResultadoMinigame.unity
+    guid: 881e138b1618588419b5af00a5455692
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

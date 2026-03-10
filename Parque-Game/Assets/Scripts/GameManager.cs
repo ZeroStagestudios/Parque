@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -12,6 +13,13 @@ public class GameManager : MonoBehaviour
     private int minigamesJogadosHoje = 0;
     private int maxMinigamesPorDia = 4;
     private CharacterController characterController;
+
+    public Dictionary<string, string> dadosRelatorio;
+
+    public enum ResultadoMinigame{Vitoria, Derrota}
+    public ResultadoMinigame resultadoMinigame;
+    public int totalTickets;
+    public int totalMinigamesVencidos;
 
     void Awake()
     {
@@ -44,12 +52,12 @@ public class GameManager : MonoBehaviour
                player.transform.position = posicaoInicial.position;
             }
         }
-
+        FadeController.Instance.StartFadeIn(1f);
     }
     void NewGame()
     {
         PlayerPrefs.DeleteAll();
-    }
+    }   
 
     public void NextDay()
     {

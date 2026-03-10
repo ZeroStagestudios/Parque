@@ -10,17 +10,21 @@ public class FadeController : MonoBehaviour
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
+
         }
         else
         {
             Instance = this;
+            DontDestroyOnLoad(gameObject);
         }
-                fade = GetComponent<CanvasGroup>();
+        fade = GetComponentInChildren<CanvasGroup>();
+        Debug.Log("CanvasGroup encontrado: " + fade);
 
     }
     IEnumerator FadeOut(float duration)
     {
         float elapsedTime = 0f;
+        Debug.Log("FadeOut iniciado, fade: " + fade);
 
         while (elapsedTime < duration)
         {

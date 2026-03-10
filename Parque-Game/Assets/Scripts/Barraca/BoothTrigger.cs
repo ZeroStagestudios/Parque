@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -26,8 +27,7 @@ public class BoothTrigger : MonoBehaviour
                 booth.RegisterPlay();
                 GameManager.Instance.RegisterMinigamePlayed();
                 GameManager.Instance.posicaoantesminigame = GameManager.Instance.player.transform.position;
-                SceneManager.LoadScene(snceneName);
-
+                StartCoroutine(TransitionToMinigame());
             }
         }
     }
@@ -52,6 +52,13 @@ public class BoothTrigger : MonoBehaviour
                 mudarCena = false;
             }
         }
+    }
+
+    public IEnumerator TransitionToMinigame()
+    {
+        FadeController.Instance.StartFadeOut(1f);
+        yield return new WaitForSeconds(1f); 
+        SceneManager.LoadScene(snceneName);
     }
 
 }
