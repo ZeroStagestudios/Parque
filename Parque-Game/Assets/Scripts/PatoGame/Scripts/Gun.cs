@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -30,6 +31,7 @@ public class Gun : MonoBehaviour
             AudioManager.instance.PlaySFX(somTiro);
         }
     }
+
     void AtualizarPosicaoArma()
     {
         Vector3 mousePosition = Input.mousePosition;

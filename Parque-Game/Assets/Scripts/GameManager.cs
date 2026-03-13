@@ -31,7 +31,6 @@ public class GameManager : MonoBehaviour
         
         Instance = this;
         DontDestroyOnLoad(gameObject); 
-        Debug.Log("Posição salva: " + GameManager.Instance.posicaoantesminigame);
         NewGame();
         SceneManager.sceneLoaded += OnSceneLoaded;
     }

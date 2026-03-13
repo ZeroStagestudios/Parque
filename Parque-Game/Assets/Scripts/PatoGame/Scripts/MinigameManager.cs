@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class MinigameManager : MonoBehaviour, IMinigameManager
 {
-   private float tempoMinigame = 40f;
+   private float tempoMinigame = 20f;
    int ultimosegundo = 40;
 
    private int patoAcertado = 0;

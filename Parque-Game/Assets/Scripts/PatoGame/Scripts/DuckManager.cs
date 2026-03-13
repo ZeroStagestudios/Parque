@@ -1,11 +1,11 @@
 using System.Collections.Generic;
+using Unity.Collections;
 using UnityEngine;
 
 public class DuckManager : MonoBehaviour
 {
      List<Duck> ducks = new List<Duck>();
     public int patosSimultaneos = 3;
-
     void Awake()
     {
         ducks.AddRange(FindObjectsOfType<Duck>(true));

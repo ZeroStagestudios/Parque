@@ -24,7 +24,6 @@ public class ConfirmacaoUI : MonoBehaviour
             Instance = this;
         }
     }
-   
     public void BtnSim()
     {
         StartCoroutine(passarDiaCoroutine());

@@ -9,10 +9,9 @@ public class IndicatorShake : MonoBehaviour
 
     private System.Collections.IEnumerator ShakeCoroutine()
     {
-        float shakeDuration = 0.5f; // Duração do shake
-        float shakeMagnitude = 0.1f; // Magnitude do shake
-        Vector3 originalPosition = transform.localPosition; // Posição original do indicador
-
+        float shakeDuration = 0.5f; 
+        float shakeMagnitude = 0.1f; 
+        Vector3 originalPosition = transform.localPosition; 
         float elapsed = 0.0f;
 
         while (elapsed < shakeDuration)
@@ -23,10 +22,8 @@ public class IndicatorShake : MonoBehaviour
             transform.localPosition = new Vector3(originalPosition.x + x, originalPosition.y + y, originalPosition.z);
 
             elapsed += Time.deltaTime;
-
             yield return null;
         }
-
-        transform.localPosition = originalPosition; // Retorna à posição original
+        transform.localPosition = originalPosition; 
     }
 }

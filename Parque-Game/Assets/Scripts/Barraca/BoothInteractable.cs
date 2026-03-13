@@ -6,10 +6,6 @@ public class BoothInteractable : MonoBehaviour
     public bool isMinigame = true;
     public string boothName;
     public GameObject indicador;
-    void Awake()
-    {
-        Debug.Log("indicador: " + indicador);
-    }
     void Start()
     {
         indicador.SetActive(false);

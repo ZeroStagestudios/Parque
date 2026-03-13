@@ -10,7 +10,6 @@ public class FadeController : MonoBehaviour
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
-
         }
         else
         {
@@ -18,13 +17,12 @@ public class FadeController : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
         fade = GetComponentInChildren<CanvasGroup>();
-        Debug.Log("CanvasGroup encontrado: " + fade);
 
     }
     IEnumerator FadeOut(float duration)
     {
+        fade.blocksRaycasts = true;
         float elapsedTime = 0f;
-        Debug.Log("FadeOut iniciado, fade: " + fade);
 
         while (elapsedTime < duration)
         {
@@ -32,21 +30,19 @@ public class FadeController : MonoBehaviour
             fade.alpha = Mathf.Clamp01(elapsedTime / duration);
             yield return null;
         }
-
         fade.alpha = 1f; 
+        fade.blocksRaycasts = false;
+
     }
      IEnumerator FadeIn(float duration)
-
     {
         float elapsedTime = 0f;
-
         while (elapsedTime < duration)
         {
             elapsedTime += Time.deltaTime;
             fade.alpha = 1f - Mathf.Clamp01(elapsedTime / duration);
             yield return null;
         }
-
         fade.alpha = 0f; 
     }
     public Coroutine StartFadeOut(float duration)
